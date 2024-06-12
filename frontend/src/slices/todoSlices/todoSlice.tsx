@@ -18,20 +18,9 @@ const todoSlice = createSlice({
     setTodoInfo(state, action: PayloadAction<any[]>) {
       state.todoInfo = action.payload;
       localStorage.setItem('todoInfo', JSON.stringify(action.payload));
-    },
-    createTodoInfo(state, action: PayloadAction<any>) {
-      state.todoInfo = [...state.todoInfo, action.payload];
-    },
-    editTodoInfo(state, action: PayloadAction<any>) {
-      state.todoInfo = state.todoInfo.map((item: any) =>
-        item._id === action.payload._id ? action.payload : item
-      );
-    },
-    deleteTodoInfo(state, action: PayloadAction<string>) {
-      state.todoInfo = state.todoInfo.filter((item: any) => item._id !== action.payload);
     }
   }
 });
 
-export const { setTodoInfo, createTodoInfo, editTodoInfo, deleteTodoInfo } = todoSlice.actions;
+export const { setTodoInfo } = todoSlice.actions;
 export default todoSlice.reducer;
