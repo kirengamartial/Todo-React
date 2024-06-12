@@ -1,5 +1,5 @@
 import React from 'react'
-import HashLoader from "react-spinners/HashLoader";
+import BeatLoader from "react-spinners/DotLoader";
 
 
 const Spinner: React.FC = () => {
@@ -10,7 +10,7 @@ const Spinner: React.FC = () => {
     }
   return (
     <>
-      <HashLoader
+      <BeatLoader
        color='#35C2A8'
        cssOverride={color}
        loading={true}
